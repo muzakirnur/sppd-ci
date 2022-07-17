@@ -247,12 +247,17 @@
                 <li class="menu-item hidden"><a href="https://codeigniter4.github.io/userguide/" target="_blank">Docs</a>
                 </li>
                 <li class="menu-item hidden">
-                    <?php if (helper('Authenticated') == 1) : ?>
-                        <a href="#" target="_blank">Logout</a>
+                    <?php if (session('isLoggedIn') == true) : ?>
+                        <a href="/logout">Logout</a>
                     <?php endif; ?>
+                    <?php if (session('isLoggedIn') == false) : ?>
+                        <a href="/login">Login</a>
                 </li>
-                <li class="menu-item hidden"><a href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md" target="_blank">Contribute</a>
+                <li class="menu-item hidden">
+                    <a href="/login">Register</a>
+
                 </li>
+            <?php endif; ?>
             </ul>
         </div>
         <?php if (session()->getFlashdata('success')) : ?>

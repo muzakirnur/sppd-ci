@@ -33,7 +33,7 @@ class Login extends BaseController
         $passRequest = $this->request->getVar('password');
 
         // Get User Data
-        $userData = $this->userModel->where('email', $emailRequest);
+        $userData = $this->userModel->where('email', $emailRequest)->first();
 
         // Check if Data Exist
         if (!$userData == null) {

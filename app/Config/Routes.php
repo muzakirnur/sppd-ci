@@ -40,6 +40,7 @@ $routes->get('/register', 'Register::index');
 $routes->post('/register', 'Register::register');
 $routes->get('/login', 'Login::index');
 $routes->post('/login', 'Login::login');
+$routes->get('/logout', 'Logout::index');
 
 
 /*

@@ -22,7 +22,7 @@ class Register extends BaseController
         ];
         if ($this->auth == true) {
             session()->setFlashdata('error', 'You already Logged In');
-            return redirect()->to('/');
+            return redirect()->back();
         }
         return view('auth/register', $data);
     }
