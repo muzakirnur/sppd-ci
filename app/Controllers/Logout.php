@@ -16,6 +16,6 @@ class Logout extends BaseController
         ];
         session()->destroy($user);
         session()->setFlashdata('success', 'Logout Successfully');
-        return redirect()->to('/login');
+        return redirect()->to('/');
     }
 }

@@ -16,7 +16,7 @@ class Login extends BaseController
     public function index()
     {
         $data = [
-            'title' => "Register Now",
+            'title' => "Login Now",
             'validation' => Services::validation(),
         ];
         if ($this->auth == true) {
@@ -29,11 +29,11 @@ class Login extends BaseController
     public function login()
     {
         // Mendefinisikan Email dan Password dari Request
-        $emailRequest = $this->request->getVar('email');
+        $emailRequest = $this->request->getVar('username');
         $passRequest = $this->request->getVar('password');
 
         // Get User Data
-        $userData = $this->userModel->where('email', $emailRequest)->first();
+        $userData = $this->userModel->where('username', $emailRequest)->first();
 
         // Check if Data Exist
         if (!$userData == null) {
@@ -44,17 +44,17 @@ class Login extends BaseController
                 $user = [
                     'id' => $userData['id'],
                     'name' => $userData['name'],
-                    'email' => $userData['email'],
+                    'username' => $userData['username'],
                     'isLoggedIn' => TRUE,
                 ];
                 session()->set($user);
-                return redirect()->to('/')->with('success', 'Login Successfully');
+                return redirect()->to('/dashboard')->with('success', 'Login Successfully');
             } else {
                 session()->setFlashdata('error', 'The credential is incorrect');
                 return redirect()->back()->withInput();
             }
         } else {
-            session()->setFlashdata('error', 'The email doesnt exist');
+            session()->setFlashdata('error', 'The Username doesnt exist');
             return redirect()->back()->withInput();
         }
     }
