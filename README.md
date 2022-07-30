@@ -17,14 +17,16 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - Clone Repository dengan cara ketikkan<code>git clone https://github.com/muzakirnur/sppd-ci.git myappname</code> di terminal
 - Rename file <code>env</code> menjadi <code>.env</code>
 - Set up database credentials pada file <code>.env</code> seperti berikut, sesuaikan dengan database yang digunakan
-  {
+
+  ```
     <code>database.default.hostname = localhost</code>
     <code>database.default.database = namaDatabase</code>
     <code>database.default.username = root</code>
     <code>database.default.password =</code>
     <code>database.default.DBDriver = MySQLi</code>
     <code>database.default.DBPrefix =</code>
-  }
+  ```
+
 - Jalankan <code>php spark migrate</code> untuk menjalankan migrasi ke database
 - Jalankan <code>php spark db:seed UserSeeder</code> untuk menjalankan seeder
 - Jalankan <code>php spark serve</code> untuk menjalankan server
