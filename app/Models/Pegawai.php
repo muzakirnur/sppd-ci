@@ -13,15 +13,14 @@ class Pegawai extends Model
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
+    protected $protectFields    = false;
     protected $allowedFields    = [];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
 
     // Validation
     protected $validationRules      = [];
@@ -39,4 +38,23 @@ class Pegawai extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getAllData()
+    {
+        return $this->db->table('pegawais')
+            ->join('jabatans', 'jabatans.id=pegawais.jabatan_id')
+            ->join('pangkats', 'pangkats.id=pegawais.pangkat_id')
+            ->select('pegawais.*, jabatans.id as jabatan_id, jabatans.jabatan, pangkats.id as pangkat_id, pangkats.pangkat, pangkats.golongan')
+            ->get()->getResultArray();
+    }
+
+    public function getById($idPegawai)
+    {
+        return $this->db->table('pegawais')
+            ->where('pegawais.id', $idPegawai)
+            ->join('jabatans', 'jabatans.id=pegawais.jabatan_id', 'left')
+            ->join('pangkats', 'pangkats.id=pegawais.pangkat_id')
+            ->select('pegawais.*, jabatans.id as jabatan_id, jabatans.jabatan, pangkats.id as pangkat_id, pangkats.pangkat, pangkats.golongan')
+            ->get()->getResultArray();
+    }
 }

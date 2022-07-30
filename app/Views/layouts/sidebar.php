@@ -23,66 +23,39 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link <?= url_is('pangkat*') ?>">
+                    <a href="/pangkat" class="nav-link <?= url_is('pangkat*') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Pangkat & Golongan
-                            <i class="fas fa-angle-left right"></i>
 
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/pangkat" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Da</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/top-nav-sidebar.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Top Navigation + Sidebar</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/boxed.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Boxed</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/jabatan" class="nav-link <?= url_is('jabatan*') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
-                            Layout Options
-                            <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">6</span>
+                            Jabatan
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="../layout/top-nav.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Top Navigation</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/top-nav-sidebar.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Top Navigation + Sidebar</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../layout/boxed.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Boxed</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="nav-item">
+                    <a href="/alat" class="nav-link <?= url_is('alat*') ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-bus"></i>
+                        <p>
+                            Alat Angkut
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pegawai" class="nav-link <?= url_is('pegawai*') ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                        <p>
+                            Data Pegawai
+                        </p>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>
@@ -116,7 +89,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

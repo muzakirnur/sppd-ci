@@ -28,10 +28,12 @@ class Pegawais extends Migration
             ],
             'jabatan_id' => [
                 'type' => 'INT',
+                'unsigned' => true
 
             ],
             'pangkat_id' => [
                 'type' => 'INT',
+                'unsigned' => true
 
             ],
             'created_at' => [

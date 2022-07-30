@@ -18,6 +18,7 @@ class Sppds extends Migration
             'pegawai_id' => [
                 'type' => 'INT',
                 'constraint' => 5,
+                'unsigned' => true
 
             ],
             'no_sppd' => [
@@ -27,6 +28,8 @@ class Sppds extends Migration
             'alat_angkut_id' => [
                 'type' => 'INT',
                 'constraint' => 5,
+                'unsigned' => true
+
             ],
             'lama_perjalanan' => [
                 'type' => 'INT',
@@ -41,6 +44,7 @@ class Sppds extends Migration
             'pengikut_id' => [
                 'type' => 'INT',
                 'constraint' => 5,
+                'unsigned' => true
 
             ],
             'tempat_berangkat' => [
@@ -65,7 +69,7 @@ class Sppds extends Migration
         $this->forge->addKey('id', TRUE);
 
         // Adding Foreign Key
-        $this->forge->addForeignKey('pegawai_id', 'pegawais', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('pengikut_id', 'pegawais', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('alat_angkut_id', 'alat_angkuts', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('pegawai_id', 'pegawais', 'id', 'CASCADE', 'CASCADE');
 
