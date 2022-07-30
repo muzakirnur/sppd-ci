@@ -27,6 +27,7 @@ Additionally, make sure that the following extensions are enabled in your PHP:
     database.default.DBPrefix =
   ```
 
+- Pada <code>Config/App.php</code> ganti <code>http://myblog.test/</code> dengan url anda
 - Jalankan <code>php spark migrate</code> untuk menjalankan migrasi ke database
 - Jalankan <code>php spark db:seed UserSeeder</code> untuk menjalankan seeder
 - Jalankan <code>php spark serve</code> untuk menjalankan server
