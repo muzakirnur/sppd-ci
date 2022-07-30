@@ -19,12 +19,12 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - Set up database credentials pada file <code>.env</code> seperti berikut, sesuaikan dengan database yang digunakan
 
   ```
-    <code>database.default.hostname = localhost</code>
-    <code>database.default.database = namaDatabase</code>
-    <code>database.default.username = root</code>
-    <code>database.default.password =</code>
-    <code>database.default.DBDriver = MySQLi</code>
-    <code>database.default.DBPrefix =</code>
+    database.default.hostname = localhost
+    database.default.database = namaDatabase
+    database.default.username = root
+    database.default.password =
+    database.default.DBDriver = MySQLi
+    database.default.DBPrefix =
   ```
 
 - Jalankan <code>php spark migrate</code> untuk menjalankan migrasi ke database
